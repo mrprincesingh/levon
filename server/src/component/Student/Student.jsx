@@ -24,7 +24,7 @@ const Student = () => {
   const isLoading = useSelector((store) => store.AuthReducer.isLoad);
   const allUsers = useSelector((store) => store.AuthReducer.alluser.users) || [];
   const [searchQuery, setSearchQuery] = useState('');
-
+console.log(allUsers)
   useEffect(() => {
     dispatch(get_All_User());
   }, [dispatch]);

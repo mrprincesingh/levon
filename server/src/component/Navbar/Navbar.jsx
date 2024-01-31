@@ -38,7 +38,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token12");
     dispatch(logoutfunc())
    navigate("/")
   };

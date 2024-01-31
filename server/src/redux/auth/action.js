@@ -92,7 +92,7 @@ export const get_Alluser_Error = () => {
 
 export const get_All_User = () =>(dispatch)=>{
   dispatch(get_Alluser_request());
-  axios.get("http://localhost:4000/api/v1/auth/users")
+  axios.get("https://levon-alpha.vercel.app/api/v1/auth/users")
   .then((res)=>{
    // console.log(res)
     dispatch(get_Alluser_success(res.data));
@@ -108,7 +108,7 @@ export const signupfunc =
     dispatch(get_singup_request());
 
     axios
-      .post("http://localhost:4000/api/v1/auth/register", {
+      .post("https://levon-alpha.vercel.app/api/v1/auth/register", {
         name,
         email,
         password,
@@ -136,7 +136,7 @@ export const signupfunc =
   export const logoutfunc =()=>(dispatch)=>{
     dispatch(get_logout_request());
    
-    axios.get("http://localhost:4000/api/v1/auth/logout").then((res)=>{
+    axios.get("https://levon-alpha.vercel.app/api/v1/auth/logout").then((res)=>{
       console.log(res);
       dispatch(get_logout_success());
      
@@ -152,7 +152,7 @@ export const loginfunc =
     dispatch(get_login_request());
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/auth/login",
+        "https://levon-alpha.vercel.app/api/v1/auth/login",
         {
           email,
           password,
