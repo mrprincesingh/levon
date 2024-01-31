@@ -4,7 +4,7 @@ import axios from "axios";
 export const getAllCourse = ()  =>(dispatch)=>{
     dispatch({type: types.GET_Course_request});
     return axios
-    .get(`https://levon-alpha.vercel.app/api/v1/courses`)
+    .get(`https://levon.onrender.com/api/v1/courses`)
     .then((res) => {
        
         dispatch({type: types.GET_Course_success, payload: res.data.courses});
@@ -20,7 +20,7 @@ export const postCourse = ({title , description,image})  =>(dispatch)=>{
     dispatch({type: types.POST_Course_request});
 
     return axios
-    .post(`https://levon-alpha.vercel.app/api/v1/addcourses` , {title , description,image})
+    .post(`https://levon.onrender.com/api/v1/addcourses` , {title , description,image})
     .then((res)=>{
         console.log(res)
         dispatch({type: types.POST_Course_success , payload: res.data.courses});
@@ -34,7 +34,7 @@ export const postCourse = ({title , description,image})  =>(dispatch)=>{
 export const editCourse = ({id , title , description , image})  =>(dispatch)=>{
 dispatch({type: types.EDIT_Course_request})
 return axios
-.put(`https://levon-alpha.vercel.app/api/v1/editcourses/${id}`,{title , description , image}).then((res)=>{
+.put(`https://levon.onrender.com/api/v1/editcourses/${id}`,{title , description , image}).then((res)=>{
 
     dispatch({type: types.EDIT_Course_success , payload: res.data.courses});
 }).catch((e) => {
@@ -47,7 +47,7 @@ return axios
 export const deleteCourse = (id)  =>(dispatch)=>{
     dispatch({type: types.DELETE_Course_request});
     return axios
-    .delete(`https://levon-alpha.vercel.app/api/v1/deletecourses/${id}`).then((res)=>{
+    .delete(`https://levon.onrender.com/api/v1/deletecourses/${id}`).then((res)=>{
 
         dispatch({type: types.DELETE_Course_success , payload: res.data.courses});
     }).catch((e) => {
